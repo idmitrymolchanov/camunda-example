@@ -1,0 +1,4 @@
+org\example\project\service\CreateDocumentService.class
+org\example\CamundaApplication.class
+org\example\project\bpmn_components\users\UserController.class
+org\example\project\model\Document.class

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="Definitions_1tumzm0" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="example-table" name="Example Table">
+    <decisionTable id="DecisionTable_1ni6xgi">
+      <input id="Input_1">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>var1</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="testVar" typeRef="integer" />
+      <rule id="DecisionRule_0010gnz">
+        <description>true</description>
+        <inputEntry id="UnaryTests_0jyjcyf">
+          <text>&lt;=5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v8uj2k">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16h2pe0">
+        <description>false</description>
+        <inputEntry id="UnaryTests_0bc2p3e">
+          <text>&gt;5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o6yuq0">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="example" name="Table2">
+    <informationRequirement>
+      <requiredDecision href="#example-table" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1rxmznl">
+      <input id="InputClause_158v29k">
+        <inputExpression id="LiteralExpression_0kemrr8" typeRef="integer">
+          <text>testVar</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1rpgloq" name="testVar" typeRef="integer" />
+      <rule id="DecisionRule_0kcnrdk">
+        <inputEntry id="UnaryTests_16w92uh">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gahv6j">
+          <text>8</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gf75ij">
+        <inputEntry id="UnaryTests_1rs87kg">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zvkcad">
+          <text>9</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
